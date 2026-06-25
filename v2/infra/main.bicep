@@ -296,8 +296,10 @@ module avmDeployment './avm/main.bicep' = if (isAvm) {
 // Activated when deploymentFlavor = 'bicep'
 // ============================================================================
 
- module bicepDeployment './bicep/main.bicep' = if (isBicep) {
- name: take('module.bicep.${solutionName}', 64)
+
+module bicepDeployment './bicep/main.bicep' = if (isBicep) {
+  name: take('module.bicep.${solutionName}', 64)
+
  params: {
     solutionName: solutionName
     solutionUniqueText: solutionUniqueText
@@ -332,8 +334,11 @@ module avmDeployment './avm/main.bicep' = if (isAvm) {
     createdBy: createdBy
     principal: principal
     deployingUserPrincipalType: deployingUserPrincipalType
-  }
+
 }
+ }
+
+>>>>>>> 0dd149dca58a8946c01a47f36eb186a585a545ed
 // ============================================================================
 // Outputs — Coalesced from whichever flavor was deployed
 // ============================================================================
